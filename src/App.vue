@@ -1,19 +1,22 @@
 <script>  
   import {store} from './store.js'
+  import AppHeader from "./components/AppHeader.vue";
   export default {
     data() {
-    return {
-      store,
+      return {
+        store,
+      }
+    },
+    components:{
+      AppHeader
     }
-  },
   }
 </script>
 
 
 <template>
-  <div>
+  <AppHeader/>
 
-  </div>
 </template>
 
 
