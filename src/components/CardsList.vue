@@ -1,4 +1,5 @@
 <script>
+import CounterCards from "./CounterCards.vue";
 import CardItem from "../components/CardItem.vue";
 import {store} from "../store";
 
@@ -10,13 +11,15 @@ import {store} from "../store";
             }
         },
         components:{
-            CardItem
+            CardItem,
+            CounterCards
         }
     }
 </script>
 
 <template>
-    <div class="container my-3">
+    <div class="container ">
+        <CounterCards/>
         <div class="row row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
             <CardItem v-for="card in store.cards" :card="card"></CardItem>
         </div>

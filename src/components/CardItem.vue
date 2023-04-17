@@ -14,7 +14,7 @@
 
 <template>
    <div class="col">
-        <div class="card rounded-0 my-2">
+        <div class="card rounded-0 mb-3">
             <img class="img-fluid" :src="card.card_images[0].image_url" alt="">
             
             <h5 class="text-center text-white text-uppercase fw-semibold p-2">{{ card.name }}</h5>

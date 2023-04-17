@@ -8,7 +8,7 @@
             }
         },
         components:{
-            CardsList
+            CardsList,
         }
     }
 </script>
@@ -16,7 +16,7 @@
 
 <template>
     <main>
-       <CardsList/>
+        <CardsList/>
     </main>
 </template>
 
