@@ -35,5 +35,6 @@ import {store} from "../store";
 @use '../assets/scss/variables.scss' as *;
     .container{
         background-color: $light;
+        padding: 2rem;
     }
 </style>

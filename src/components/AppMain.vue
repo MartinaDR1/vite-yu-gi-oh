@@ -1,5 +1,6 @@
 <script>
     import CardsList from "./CardsList.vue";
+    import Filter from "./Filter.vue";
     export default {
         data(){ 
             return {
@@ -9,6 +10,7 @@
         },
         components:{
             CardsList,
+            Filter
         }
     }
 </script>
@@ -16,6 +18,7 @@
 
 <template>
     <main>
+        <Filter/>
         <CardsList/>
     </main>
 </template>
