@@ -20,12 +20,12 @@ import {store} from "../store";
 <template>
     <div class="container ">
         <CounterCards/>
-        <div class="row row-cols-sm-2 row-cols-md-3 row-cols-xl-5">
-            <CardItem v-for="card in store.cards" :card="card" v-if="!store.loading"></CardItem>
-
-            <div class="loader" v-else>
-                Loading...
-            </div>
+        <div class="row row-cols-sm-2 row-cols-md-3 row-cols-xl-5" v-if="!store.loading">
+            <CardItem v-for="card in store.cards" :card="card"></CardItem>
+            
+        </div>
+        <div class="loader" v-else>
+            Loading...
         </div>
     </div>
 </template>
