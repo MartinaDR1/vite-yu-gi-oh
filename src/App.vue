@@ -1,14 +1,24 @@
 <script>  
   import {store} from './store.js'
   import AppHeader from "./components/AppHeader.vue";
+  import AppMain from './components/AppMain.vue'
+
   export default {
     data() {
       return {
         store,
       }
     },
+    mounted(){
+      store.fetchCards(store.apiUrl)
+    },
+    methods(){
+      this.store.cards
+      this.store.info
+    },
     components:{
-      AppHeader
+      AppHeader,
+      AppMain
     }
   }
 </script>
@@ -16,7 +26,7 @@
 
 <template>
   <AppHeader/>
-
+  <AppMain/>
 </template>
 
 
