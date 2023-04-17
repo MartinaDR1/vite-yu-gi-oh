@@ -14,7 +14,7 @@ import {store} from "../store";
 
 <template>
     <div class="counter p-2">
-        <h6 class="text-white">Found {{ store.cards.length }} cards</h6>
+        <h6 class="text-white" v-if="store.cards">Found {{ store.cards.length }} cards</h6>
     </div>
 </template>
 
