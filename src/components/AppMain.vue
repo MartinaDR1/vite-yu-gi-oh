@@ -16,7 +16,7 @@
         },
         methods: {
             changeArchetype() {
-                const url = this.store.apiUrl + `?archetype=${this.store.selectValue}`
+                const url = `db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${this.store.selectValue}`
                 console.log(url);
                 this.store.APIArchetype(this.store.apiUrl)
             }
@@ -28,7 +28,7 @@
 <template>
     <main>
         <FilterArchetype @changeSelect="changeArchetype()"/>
-        <CardsList v-model="this.store.archetypes"/>
+        <CardsList/>
     </main>
 </template>
 

@@ -2,7 +2,7 @@ import { reactive } from 'vue'
 import axios from 'axios'
 
 export const store = reactive({
-    apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num15=&offset=0',
+    apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php',
     cards:null,
     loading: true,
     archetypes: [],

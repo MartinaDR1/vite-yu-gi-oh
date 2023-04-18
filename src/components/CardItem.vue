@@ -19,7 +19,6 @@
             
             <h5 class="text-center text-white text-uppercase fw-semibold p-2">{{ card.name }}</h5>
             <span class="text-center">{{ card.archetype }}</span>
-            <span class="text-center">{{ card.type }}</span>
 
         </div>
     </div>
