@@ -4,9 +4,10 @@ import axios from 'axios'
 export const store = reactive({
     apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num15=&offset=0',
     cards:null,
-    searchText: '',
     loading: true,
-
+    archetypes: [],
+    selectValue: null,
+    
     fetchCards(url){
         axios 
         .get(url)
@@ -18,6 +19,21 @@ export const store = reactive({
         .catch (err => {
             console.log(err);
             console.error(err.message)
+        })
+    },
+    APIArchetype(url) {
+        axios 
+          .get(url)
+          .then(response => {
+            response.data.data.forEach(element => {
+              if(!this.archetypes.includes(element.archetype)){
+                this.archetypes.push(element.archetype)
+              };
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            console.error(err.message);
         })
     }
 })

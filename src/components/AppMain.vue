@@ -1,16 +1,25 @@
 <script>
     import CardsList from "./CardsList.vue";
-    import Filter from "./Filter.vue";
+    import FilterArchetype from "./FilterArchetype.vue";
+    import { store } from '../store'
     export default {
         data(){ 
             return {
                 name: 'AppMain',
-                CardsList: CardsList
+                CardsList: CardsList,
+                store
             }
         },
         components:{
             CardsList,
-            Filter
+            FilterArchetype
+        },
+        methods: {
+            changeArchetype() {
+                const url = this.store.apiUrl + `?archetype=${this.store.selectValue}`
+                console.log(url);
+                this.store.APIArchetype(this.store.apiUrl)
+            }
         }
     }
 </script>
@@ -18,8 +27,8 @@
 
 <template>
     <main>
-        <Filter/>
-        <CardsList/>
+        <FilterArchetype @changeSelect="changeArchetype()"/>
+        <CardsList v-model="this.store.archetypes"/>
     </main>
 </template>
 
