@@ -14,11 +14,16 @@
             CardsList,
             FilterArchetype
         },
-        methods: {
-            changeArchetype() {
-                const url = `db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${this.store.selectValue}`
-                console.log(url);
-                this.store.APIArchetype(this.store.apiUrl)
+        methods:{
+            filterResults(){
+            console.log('filter results');
+            let url;
+            if(store.archtype === '') {
+                url = store.apiUrl
+            } else {
+                url = `${store.apiUrl}&archetype=${store.archetype}`
+            }
+            store.fetchCards(url)
             }
         }
     }
@@ -27,7 +32,7 @@
 
 <template>
     <main>
-        <FilterArchetype @changeSelect="changeArchetype()"/>
+        <FilterArchetype @changeSelect ='filterResults()'/>
         <CardsList/>
     </main>
 </template>

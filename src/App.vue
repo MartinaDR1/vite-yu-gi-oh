@@ -10,7 +10,7 @@
       }
     },
     mounted(){
-      store.fetchCards(store.apiUrl + `?num=20&offset=0`)
+      store.fetchCards(store.apiUrl)
     },
     methods(){
       this.store.cards
